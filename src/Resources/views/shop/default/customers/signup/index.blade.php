@@ -76,6 +76,13 @@
             {!! view_render_event('bagisto.shop.customers.signup_form_controls.after') !!}
           
             <?php
+            $gdprRepository = app('Webkul\GDPR\Repositories\GDPRRepository');
+
+                        $gdpr = $gdprRepository->get();
+
+                        foreach ($gdpr as $value) {
+                            $gdprData = $value;
+                        }
                 try{
                     if($gdprData && $gdprData->customer_agreement_status == 1){
             ?>
@@ -83,9 +90,9 @@
             <div class="control-group" :class="[errors.has('agreement') ? 'has-error' : '']">
 
                 <input type="checkbox" id="checkbox2" name="agreement" v-validate="'required'" data-vv-as="&quot;{{ __('shop::app.customer.signup-form.agreement') }}&quot;">
-                <span>
+                <label class="required">
                     <a href="#" data-toggle="modal" data-target="#termsCondition">{{ $gdprData->agreement_label }}</a>              
-                </span>
+                </label>
                 <span class="control-error" v-if="errors.has('agreement')">@{{ errors.first('agreement') }}</span>
             </div> 
 

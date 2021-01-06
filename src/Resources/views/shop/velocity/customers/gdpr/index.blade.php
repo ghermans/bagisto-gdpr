@@ -78,7 +78,7 @@
                                         <div class="horizontal-rule"></div>
                                     </div>
                                     <div class="sale-title">
-                                        <div class="section-title">
+                                        <div class="section-title required label-style">
                                             {{ __('gdpr::app.shop.customer-gdpr-data-request.update-description') }}
                                         </div>
                                     </div>
@@ -91,7 +91,8 @@
 
                                             <textarea class="control"
                                             id="update_message"
-                                            name="update_message"></textarea> 
+                                            name="update_message"
+                                            maxlength="500"></textarea> 
                                         </div>
                                         <div class="control-group">
                                             <button type="submit" class="btn btn-lg btn-primary" style="display: inline-block; width: auto; margin-left: 16px; margin-top: -20px;">
@@ -120,7 +121,7 @@
                                         <div class="horizontal-rule"></div>
                                     </div>
                                     <div class="sale-title">
-                                        <div class="section-title">
+                                        <div class="section-title required label-style">
                                             {{ __('gdpr::app.shop.customer-gdpr-data-request.delete-reason') }}
                                         </div>
                                     </div>
@@ -133,7 +134,8 @@
 
                                             <textarea class="control"
                                             id="delete_message"
-                                            name="delete_message"></textarea> 
+                                            name="delete_message"
+                                            maxlength="500"></textarea> 
                                         </div>
 
                                         <div class="control-group">

@@ -27,7 +27,7 @@
             </div>
 
             <div>
-                {{ $dataDeleteRequest['request_status'] }}
+                {{ $adminUpdateDataRequest['request_status'] }}
             </div>
         </div>
 
@@ -36,7 +36,7 @@
                 {{ __('gdpr::app.mail.new-data-request.request-type') }}
             </div>
             <div>
-                {{ $dataDeleteRequest['request_type'] }}
+                {{ $adminUpdateDataRequest['request_type'] }}
             </div>
 
             <div style="font-weight: bold;font-size: 16px;color: #242424;">
@@ -44,7 +44,7 @@
             </div>
 
             <div style="font-size: 16px; color: #242424;">
-                {{ $dataDeleteRequest['message'] }}
+                {{ $adminUpdateDataRequest['message'] }}
             </div>
 
         </div>

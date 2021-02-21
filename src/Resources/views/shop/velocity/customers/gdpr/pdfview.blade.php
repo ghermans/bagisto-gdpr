@@ -19,197 +19,197 @@
 
     <body style="background-image: none;background-color: #fff;">
         <div class="container">
-            <h1 class="hcol">Default Store View</h1>
+            <h1 class="hcol">{{ __('gdpr::app.shop.pdf.default-store-view') }}</h1>
                 <div class="invoice-summary">
-                    <h2> Account Information </h2>
+                    <h2> {{ __('gdpr::app.shop.pdf.account-information') }} </h2>
                         <div class="table address">
                             <br>
-                                <table>
-                                    <tr>
-                                        <td>First Name</td>
+                                <div>
+                                    <div>
+                                        <label>{{ __('gdpr::app.shop.pdf.first-name') }}</label>
                                         @if($param['customerInformation']->first_name)
-                                            <td>{{ $param['customerInformation']->first_name }}</td>
+                                            <span>{{ $param['customerInformation']->first_name }}</span>
                                         @else
-                                            <td>#NA</td>
+                                            <span>#NA</span>
                                         @endif
-                                    </tr>
-                                    <tr>
-                                        <td>Last Name</td>
+                                    </div>
+                                    <div>
+                                        <label>{{ __('gdpr::app.shop.pdf.last-name') }}</label>
                                         @if($param['customerInformation']->last_name)
-                                            <td>{{ $param['customerInformation']->last_name }}</td>
+                                            <span>{{ $param['customerInformation']->last_name }}</span>
                                         @else
-                                            <td>#NA</td>
+                                            <span>#NA</span>
                                         @endif
-                                    </tr>
-                                    <tr>
-                                        <td>Email</td>
+                                    </div>
+                                    <div>
+                                        <label>{{ __('gdpr::app.shop.pdf.email') }}</label>
                                         @if($param['customerInformation']->email)
-                                            <td>{{ $param['customerInformation']->email }}</td>
+                                            <span>{{ $param['customerInformation']->email }}</span>
                                         @else
-                                            <td>#NA</td>
+                                            <span>#NA</span>
                                         @endif
-                                    </tr>
-                                    <tr>
-                                        <td>Gender</td>
+                                    </div>
+                                    <div>
+                                        <label>{{ __('gdpr::app.shop.pdf.gender') }}</label>
                                         @if($param['customerInformation']->gender)
-                                            <td>{{ $param['customerInformation']->gender }}</td>
+                                            <span>{{ $param['customerInformation']->gender }}</span>
                                         @else
-                                            <td>#NA</td>
+                                            <span>#NA</span>
                                         @endif
-                                    </tr>
-                                    <tr>
-                                        <td>Date Of Birth</td>
+                                    </div>
+                                    <div>
+                                        <label>{{ __('gdpr::app.shop.pdf.dob') }}</label>
                                         @if($param['customerInformation']->date_of_birth)
-                                            <td>{{ $param['customerInformation']->date_of_birth }}</td>
+                                            <span>{{ $param['customerInformation']->date_of_birth }}</span>
                                         @else
-                                            <td>#NA</td>
+                                            <span>#NA</span>
                                         @endif
-                                    </tr>
-                                    <tr>
-                                        <td>Phone</td>
+                                    </div>
+                                    <div>
+                                        <label>{{ __('gdpr::app.shop.pdf.phone') }}</label>
                                         @if($param['customerInformation']->phone)
-                                            <td>{{ $param['customerInformation']->phone }}</td>
+                                            <span>{{ $param['customerInformation']->phone }}</span>
                                         @else
-                                            <td>#NA</td>
+                                            <span>#NA</span>
                                         @endif
-                                    </tr>
-                                </table>
+                                    </div>
+                                </div>
                             <br>
                         </div>                  
     
-                    <h2> Address Information</h2>
+                    <h2> {{ __('gdpr::app.shop.pdf.address-information') }} </h2>
                         <div class="table address">
                             @if(isset($param['address']))
                                 @foreach($param['address'] as $params)
                                     <br>
-                                        <table>
-                                            <th class="heading">Address - {{$params->id}}</th>
-                                            <tr>
-                                                <td>City</td>
+                                        <div>
+                                            <div class="heading">{{ __('gdpr::app.shop.pdf.address') }} - {{$params->id}}</div>
+                                            <div>
+                                                <label>{{ __('gdpr::app.shop.pdf.city') }}</label>
                                                 @if($params->city)
-                                                    <td>{{ $params->city }}</td>
+                                                    <span>{{ $params->city }}</span>
                                                 @else
-                                                    <td>#NA</td>
+                                                    <span>#NA</span>
                                                 @endif
-                                            </tr>
-                                            <tr>
-                                                <td>Company</td>
+                                            </div>
+                                            <div>
+                                                <label>{{ __('gdpr::app.shop.pdf.company') }}</label>
                                                 @if($params->company_name)
-                                                    <td>{{ $params->company_name }}</td>
+                                                    <span>{{ $params->company_name }}</span>
                                                 @else
-                                                    <td>#NA</td>
+                                                    <span>#NA</span>
                                                 @endif
-                                            </tr>
-                                            <tr>
-                                                <td>Country</td>
+                                            </div>
+                                            <div>
+                                                <label>{{ __('gdpr::app.shop.pdf.country') }}</label>
                                                 @if($params->country)
-                                                    <td>{{ core()->country_name($params->country) }}</td>
+                                                    <span>{{ core()->country_name($params->country) }}</span>
                                                 @else
-                                                    <td>#NA</td>
+                                                    <span>#NA</span>
                                                 @endif
-                                            </tr>
-                                            <tr>
-                                                <td>First Name</td>
+                                            </div>
+                                            <div>
+                                                <label>{{ __('gdpr::app.shop.pdf.first-name') }}</label>
                                                 @if($params->first_name)
-                                                    <td>{{ $params->first_name }}</td>
+                                                    <span>{{ $params->first_name }}</span>
                                                 @else
-                                                    <td>#NA</td>
+                                                    <span>#NA</span>
                                                 @endif
-                                            </tr>
-                                            <tr>
-                                                <td>Last name</td>
+                                            </div>
+                                            <div>
+                                                <label>{{ __('gdpr::app.shop.pdf.last-name') }}</label>
                                                 @if($params->last_name)
-                                                    <td>{{ $params->last_name }}</td>
+                                                    <span>{{ $params->last_name }}</span>
                                                 @else
-                                                    <td>#NA</td>
+                                                    <span>#NA</span>
                                                 @endif
-                                            </tr>
-                                            <tr>
-                                                <td>Phone</td>
+                                            </div>
+                                            <div>
+                                                <label>{{ __('gdpr::app.shop.pdf.phone') }}</label>
                                                 @if($params->phone)
-                                                    <td>{{ $params->phone }}</td>
+                                                    <span>{{ $params->phone }}</span>
                                                 @else
-                                                    <td>#NA</td>
+                                                    <span>#NA</span>
                                                 @endif
-                                            </tr>
-                                        </table>
+                                            </div>
+                                        </div>
                                     <br>
                                  @endforeach
                             @endif   
                         </div> 
 
-                    <h2> Order Information</h2>
+                    <h2> {{ __('gdpr::app.shop.pdf.order-information') }} </h2>
                         <div class="table address">
                             @if(isset($param['order']))
                                 @foreach($param['order'] as $params)
                                     <br>
-                                        <table>
-                                            <th class="heading" align="left">Order - {{$params->id}}</th>
-                                            <tr>
-                                                <td>Order ID</td>
+                                        <div>
+                                            <div class="heading" align="left">{{ __('gdpr::app.shop.pdf.order') }} - {{$params->id}}</div>
+                                            <div>
+                                                <label>{{ __('gdpr::app.shop.pdf.order-id') }}</label>
                                                 @if($params->id)
-                                                    <td>{{ $params->id }}</td>
+                                                    <span>{{ $params->id }}</span>
                                                 @else
-                                                    <td>#NA</td>
+                                                    <span>#NA</span>
                                                 @endif
-                                            </tr>
-                                            <tr>
-                                                <td>Status</td>
+                                            </div>
+                                            <div>
+                                                <label>{{ __('gdpr::app.shop.pdf.status') }}</label>
                                                 @if($params->status)
-                                                    <td>{{ $params->status }}</td>
+                                                    <span>{{ $params->status }}</span>
                                                 @else
-                                                    <td>#NA</td>
+                                                    <span>#NA</span>
                                                 @endif
-                                            </tr>
-                                            <tr>
-                                                <td>Shipping</td>
+                                            </div>
+                                            <div>
+                                                <label>{{ __('gdpr::app.shop.pdf.shipping') }}</label>
                                                 @if($params->shipping_title)
-                                                    <td>{{ $params->shipping_title }}</td>
+                                                    <span>{{ $params->shipping_title }}</span>
                                                 @else
-                                                    <td>#NA</td>
+                                                    <span>#NA</span>
                                                 @endif
-                                            </tr>
-                                            <tr>
-                                                <td>Customer First Name</td>
+                                            </div>
+                                            <div>
+                                                <label>{{ __('gdpr::app.shop.pdf.customer-first-name') }}</label>
                                                 @if($params->customer_first_name)
-                                                    <td>{{ $params->customer_first_name }}</td>
+                                                    <span>{{ $params->customer_first_name }}</span>
                                                 @else
-                                                    <td>#NA</td>
+                                                    <span>#NA</span>
                                                 @endif
-                                            </tr>
-                                            <tr>
-                                                <td>Customer Last Name</td>
+                                            </div>
+                                            <div>
+                                                <label>{{ __('gdpr::app.shop.pdf.customer-last-name') }}</label>
                                                 @if($params->customer_last_name)
-                                                    <td>{{ $params->customer_last_name }}</td>
+                                                    <span>{{ $params->customer_last_name }}</span>
                                                 @else
-                                                    <td>#NA</td>
+                                                    <span>#NA</span>
                                                 @endif
-                                            </tr>
-                                            <tr>
-                                                <td>Customer Company Name</td>
-                                                @if($params->customer_company_name)
-                                                    <td>{{ $params->customer_company_name }}</td>
+                                            </div>
+                                            <div>
+                                                <label>{{ __('gdpr::app.shop.pdf.customer-company-name') }}</label>
+                                                @if($params->company_name)
+                                                    <span>{{ $params->company_name }}</span>
                                                 @else
-                                                    <td>#NA</td>
+                                                    <span>#NA</span>
                                                 @endif
-                                            </tr>
-                                            <tr>
-                                                <td>Order Quantity</td>
+                                            </div>
+                                            <div>
+                                                <label>{{ __('gdpr::app.shop.pdf.order-quantity') }}</label>
                                                 @if($params->total_qty_ordered)
-                                                    <td>{{ $params->total_qty_ordered }}</td>
+                                                    <span>{{ $params->total_qty_ordered }}</span>
                                                 @else
-                                                    <td>#NA</td>
+                                                    <span>#NA</span>
                                                 @endif
-                                            </tr>
-                                            <tr>
-                                                <td>Order Amount</td>
+                                            </div>
+                                            <div>
+                                                <label>{{ __('gdpr::app.shop.pdf.order-amount') }}</label>
                                                 @if($params->grand_total)
-                                                    <td>{{ $params->grand_total }}</td>
+                                                    <span>{{ $params->grand_total }}</span>
                                                 @else
-                                                    <td>#NA</td>
+                                                    <span>#NA</span>
                                                 @endif
-                                            </tr>
-                                        </table>
+                                            </div>
+                                        </div>
                                     <br>
                                 @endforeach
                             @endif   
